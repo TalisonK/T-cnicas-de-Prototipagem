@@ -1,2 +1,2 @@
-# T-cnicas-de-Prototipagem
-repositório para agrupar as atividades da disciplina de Técnicas de Prototipagem.
+# Tecnicas-de-Prototipagem
+repositório destinado a agrupar as atividades da disciplina de Técnicas de Prototipagem.
