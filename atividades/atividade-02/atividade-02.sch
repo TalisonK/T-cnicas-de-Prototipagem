@@ -8850,7 +8850,6 @@ grid 2.54 mm</description>
 </spice>
 <attribute name="LABEL" value="10K"/>
 </part>
-<part name="R4" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="WSC0001" package3d_urn="urn:adsk.eagle:package:26123/2"/>
 <part name="R5" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="WSC0001" package3d_urn="urn:adsk.eagle:package:26123/2">
 <spice>
 <pinmapping spiceprefix="R">
@@ -8906,8 +8905,6 @@ grid 2.54 mm</description>
 <sheets>
 <sheet>
 <plain>
-<text x="53.34" y="20.32" size="1.778" layer="91">Load +ve</text>
-<text x="53.34" y="17.78" size="1.778" layer="91">Load -ve</text>
 </plain>
 <instances>
 <instance part="P+1" gate="1" x="-25.4" y="17.78" smashed="yes">
@@ -8937,10 +8934,6 @@ grid 2.54 mm</description>
 <instance part="R2" gate="G$1" x="-7.62" y="7.62" smashed="yes">
 <attribute name="VALUE" x="-11.43" y="4.318" size="1.778" layer="96"/>
 <attribute name="LABEL" x="-7.62" y="10.16" size="1.778" layer="96"/>
-</instance>
-<instance part="R4" gate="G$1" x="-40.64" y="-22.86" smashed="yes">
-<attribute name="NAME" x="-44.45" y="-21.3614" size="1.778" layer="95"/>
-<attribute name="VALUE" x="-44.45" y="-26.162" size="1.778" layer="96"/>
 </instance>
 <instance part="R5" gate="G$1" x="7.62" y="7.62" smashed="yes">
 <attribute name="VALUE" x="3.81" y="4.318" size="1.778" layer="96"/>
@@ -9048,11 +9041,6 @@ grid 2.54 mm</description>
 <pinref part="SUPPLY5" gate="GND" pin="GND"/>
 <pinref part="R3" gate="G$1" pin="1"/>
 </segment>
-<segment>
-<pinref part="SUPPLY6" gate="GND" pin="GND"/>
-<wire x1="50.8" y1="15.24" x2="50.8" y2="17.78" width="0.1524" layer="91"/>
-<wire x1="50.8" y1="17.78" x2="53.34" y2="17.78" width="0.1524" layer="91"/>
-</segment>
 </net>
 <net name="N$1" class="0">
 <segment>
@@ -9088,11 +9076,12 @@ grid 2.54 mm</description>
 <pinref part="Q1" gate="1" pin="G"/>
 </segment>
 </net>
-<net name="N$7" class="0">
+<net name="LOAD+VE" class="0">
 <segment>
 <pinref part="Q1" gate="1" pin="D"/>
-<wire x1="45.72" y1="10.16" x2="45.72" y2="20.32" width="0.1524" layer="91"/>
-<wire x1="45.72" y1="20.32" x2="53.34" y2="20.32" width="0.1524" layer="91"/>
+<wire x1="45.72" y1="10.16" x2="45.72" y2="22.86" width="0.1524" layer="91"/>
+<label x="55.88" y="22.86" size="1.778" layer="95" xref="yes"/>
+<wire x1="55.88" y1="22.86" x2="45.72" y2="22.86" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$8" class="0">
@@ -9109,6 +9098,14 @@ grid 2.54 mm</description>
 <pinref part="TP2" gate="G$1" pin="PP"/>
 <pinref part="R3" gate="G$1" pin="2"/>
 <junction x="45.72" y="-15.24"/>
+</segment>
+</net>
+<net name="LOAD-VE" class="0">
+<segment>
+<pinref part="SUPPLY6" gate="GND" pin="GND"/>
+<wire x1="50.8" y1="15.24" x2="50.8" y2="17.78" width="0.1524" layer="91"/>
+<label x="55.88" y="17.78" size="1.778" layer="95" xref="yes"/>
+<wire x1="50.8" y1="17.78" x2="55.88" y2="17.78" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
